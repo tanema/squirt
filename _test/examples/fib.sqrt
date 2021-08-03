@@ -1,0 +1,11 @@
+// pass in number by args
+// ex: squirt fib.sqrt 10
+
+func fib(m)
+  if m < 2 then
+    return m
+  end
+  return fib(m-1) + fib(m-2)
+end
+
+return fib(tonumber(ARGV[0]))

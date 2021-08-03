@@ -1,0 +1,8 @@
+a = true
+print(a)
+print(a == true)
+print(a == false)
+print(a != false)
+print(a == "other")
+print(!a)
+

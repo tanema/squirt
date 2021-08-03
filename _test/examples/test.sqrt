@@ -1,0 +1,89 @@
+#! /usr/bin/squirt
+// this is a comment
+a, b, c = 1.42, 2, "test (${a})"
+
+print(c, b, a)
+
+d, e, f = true, d, !d
+i = 0xA32.4A5p13
+j = .23
+k = `
+test
+this is a long string
+`
+t = {b: {}}
+
+t = {
+  b: {
+    c: {}
+  },
+  foo: k,
+  bar: j,
+  ["test"]: "yes"
+}
+
+"test"+" this"
+a++
+
+print(d, e, f, i, j, k)
+
+
+print(t)
+t.foo = e
+t[2] = "what?"
+t.b[1] = "how?"
+print(t)
+
+c = 123
+print(a, b, c)
+if a == b then print("first if")
+elseif a == c then print("test1")
+elseif c > a then print("test2")
+elseif b >= c then print("test3")
+elseif b > c then print("test4")
+elseif b != t.b.c or c == t.b.c then print("test" + "one")
+end
+
+/*
+  long comment
+  also in the long comment
+*/
+func t.foo(a, b, c...)
+  print("blah", a, b, c)
+  return 124, "does this work?"
+end
+
+func one()
+  two()
+end
+
+func two()
+  three()
+end
+
+func three()
+  // t.b() //uncomment to test runtime stacktrace
+end
+
+one()
+
+print(t.foo("one", "two", "three", "four"))
+
+for k, v in t do
+  print("table key entry:", k, "= ", v)
+end
+
+for i = 0, i < #t, i++ do
+  print("table num entry", i, t[i])
+end
+
+doing = 4
+while doing > 0 do
+  print("while", doing)
+  doing -= 1
+  if doing > 0 then next end
+  print("almost done", doing)
+end
+
+// here
+return 42

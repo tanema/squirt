@@ -1,0 +1,54 @@
+class Animal do
+  attr HasFur = true
+  attr name = "dave"
+  attr _bear = false
+
+  func new(name)
+    self.name = name
+  end
+
+  func Welcome()
+    print("welcome to the animal kingdom")
+    print(self.HasFur)
+  end
+
+  func hello()
+    print("hello ${self.name}")
+  end
+end
+
+class Human isa Animal do
+  attr HasDepression = true, {required: true}
+  attr walking = false
+
+  func walk()
+    self.walking = true
+  end
+
+  func walkandtalk()
+    self.walk()
+    self.hello()
+  end
+end
+
+class Tim isa Human do
+  attr isTim
+  attr age = 34
+
+  func Welcome()
+    super()
+  end
+
+  func new()
+    super("tim")
+  end
+
+  func walkandtalk()
+    self._bear = true
+    super()
+  end
+end
+
+me = new(Tim)
+me.walkandtalk()
+print(me.walking)

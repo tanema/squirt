@@ -1,0 +1,22 @@
+test (1.42) 2 1.42
+true true false 2.1383498e+07 0.23 test
+this is a long string
+{b: {c: {}}, foo: test
+this is a long string, bar: 0.23, test: yes}
+{nil, nil, what?, b: {nil, how?, c: {}}, foo: true, bar: 0.23, test: yes}
+2.42 2 123
+test2
+blah one two {three, four}
+124 does this work?
+table key entry: b =  {nil, how?, c: {}}
+table key entry: foo =  #<func (a, b, c...)>
+table key entry: bar =  0.23
+table key entry: test =  yes
+table num entry 0 nil
+table num entry 1 nil
+table num entry 2 what?
+while 4
+while 3
+while 2
+while 1
+almost done 0

@@ -1,0 +1,5 @@
+a = "teststring"
+print(#a)
+print(a + " new one")
+print(a == a)
+print(a == "other")
