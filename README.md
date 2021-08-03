@@ -1,5 +1,6 @@
 Squirt
 ======
+Its a tiny messy mashup of ruby and lua. Probably not useful to anyone wanting to get something productive done.
 
 ## Run it
 go run ./cmd/squirt
