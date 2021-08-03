@@ -6,7 +6,7 @@ Its a tiny messy mashup of ruby and lua. Probably not useful to anyone wanting t
 go run ./cmd/squirt
 
 ```
-class Animal
+class Animal do
   // Instance name attribute that is required with a default value of "dave".
   // Any time it is assign nil, an argument error will be raised.
   // same with the type constraint, any other type assigned will raise an argument error
@@ -17,7 +17,7 @@ class Animal
   end
 end
 
-class Tim isa Animal
+class Tim isa Animal do
   // Class attribute (capital name) with default value true
   attr HasDepression = true
   attr money
