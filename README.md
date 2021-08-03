@@ -5,6 +5,82 @@ Its a tiny messy mashup of ruby and lua. Probably not useful to anyone wanting t
 ## Run it
 go run ./cmd/squirt
 
+```
+class Animal
+  // Instance name attribute that is required with a default value of "dave".
+  // Any time it is assign nil, an argument error will be raised.
+  // same with the type constraint, any other type assigned will raise an argument error
+  attr name = "dave", {require: true, type: String}
+
+  func new(name)
+    self.name = name
+  end
+end
+
+class Tim isa Animal
+  // Class attribute (capital name) with default value true
+  attr HasDepression = true
+  attr money
+
+  func new(money)
+    self.money = money
+    super("tim") // call super with argument of "tim"
+  end
+
+  func sayHello() // public instance method
+    print("hello world")
+    self._saymoney()
+  end
+
+  func _saymoney() // private instance method (prefixed with _)
+    if self.money < 10
+      print("nevermind")
+    elsif self.money > 10000
+      print("I have #{self.money}") // string interpolation
+    else
+      print("I have so much")
+    end
+  end
+end
+
+me = new(Tim, 10) // create a new Tim with 10 money
+me.sayHello()
+
+//tables can have both index and keyed values
+tbl = {"one", "two", "three", four: "five", six: "seven"}
+
+// loop though index with regular for loop
+for i = 0; i < #tbl; i++ do
+  print(tbl[i])
+end
+
+// loop through keys with for in loop
+for k, v in tbl do
+  print(k, v)
+end
+
+// while loop
+while false do
+  print("this is a while loop")
+end
+
+// error handling can happen in any do/end block (for, while, if, func)
+do
+  spill("This is spill an Error class error")
+cleanup err = Error, ArgumentError do
+  print("caught err #{err}")
+end
+
+// func calls can be protected with a simple form
+func raiseTheRoof()
+  spill(ArgumentError, "This is spill an ArgumentError class error")
+  return 43
+end
+
+val = raiseTheRoof() // This will raise an error
+err, val = @raiseTheRoof() // This is a protected call and err will be the caught error
+```
+
 ## Decisions
 - use lua type tables/buckets with different ways to interact with it.
 - for num loop for general loop with classic form
